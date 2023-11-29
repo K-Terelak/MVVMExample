@@ -1,5 +1,6 @@
 package com.example.mvvmexample.domain.model
 
+// Model domenowy
 data class DomainCharacter(
     val id: Int?,
     val name: String?,
@@ -8,5 +9,5 @@ data class DomainCharacter(
     val species: String?,
     val status: DomainCharacterStatusType,
     val type: String?,
-    val count: Int
+    val count: Int // dodatkowy parametry ktory nie przychodzi z api
 )

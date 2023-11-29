@@ -3,6 +3,7 @@ package com.example.mvvmexample.domain.mapper
 import com.example.mvvmexample.domain.model.DomainCharacterGenderType
 import javax.inject.Inject
 
+// To samo co DomainCharacterStatusTypeMapper
 class DomainCharacterGenderTypeMapper @Inject constructor() {
     operator fun invoke(gender: String?): DomainCharacterGenderType = when (gender) {
         MALE -> DomainCharacterGenderType.MALE
