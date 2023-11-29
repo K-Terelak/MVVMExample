@@ -36,12 +36,15 @@ import coil.request.ImageRequest
 import com.example.mvvmexample.R
 import com.example.mvvmexample.domain.model.DomainCharacter
 
+// Widok
 @Composable
 fun ListScreen(
     listViewModel: ListViewModel = hiltViewModel()
 ) {
     val state = listViewModel.viewState
 
+    // Lista która wyświetla itemy (CharacterItem)
+    // + personalizacja (backgroundColor, padding itd...)
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -58,6 +61,8 @@ fun ListScreen(
     }
 }
 
+// Widok jednego itemu w liście
+// WYniesiony do innej funkcji, żeby kod był czystszy
 @Composable
 fun CharacterItem(
     character: DomainCharacter,

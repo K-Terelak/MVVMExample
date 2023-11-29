@@ -13,11 +13,13 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-@HiltViewModel
+// ViewModel
+@HiltViewModel // Adnotacja z biblioteki Hilt (dependency injection)
 class ListViewModel @Inject constructor(
-    private val getCharactersUseCase: GetCharactersUseCase
+    private val getCharactersUseCase: GetCharactersUseCase // wtrzyknięcie useCase'a do konstruktora viewModelu
 ) : ViewModel() {
 
+    // State widoku, przechowywane dane są kopiowane do viewState
     var viewState by mutableStateOf(ListScreenViewState())
         private set
 

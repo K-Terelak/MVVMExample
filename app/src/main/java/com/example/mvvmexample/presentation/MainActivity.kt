@@ -14,7 +14,7 @@ import com.example.mvvmexample.presentation.list.ListScreen
 import com.example.mvvmexample.presentation.ui.theme.MVVMExampleTheme
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+@AndroidEntryPoint // Annotacja oznaczająca klase setupu ("wejściową") dla Hilta
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
