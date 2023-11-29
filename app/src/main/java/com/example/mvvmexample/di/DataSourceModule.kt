@@ -12,6 +12,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object DataSourceModule {
 
+    // Dostarczanie data source'a
     @Singleton
     @Provides
     fun provideRemoteCharactersDataSource(retrofit: Retrofit): RemoteCharactersDataSource =

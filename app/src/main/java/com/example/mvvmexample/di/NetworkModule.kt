@@ -1,4 +1,4 @@
-package com.example.mvvmexample.di;
+package com.example.mvvmexample.di
 
 import com.example.mvvmexample.BuildConfig
 import dagger.Module
@@ -15,6 +15,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class NetworkModule {
 
+    // Dodanie interceptora ktory odpowiada za wyświetlanie logów
     @Singleton
     @Provides
     fun providesLoggingInterceptor(): HttpLoggingInterceptor {
@@ -25,6 +26,8 @@ class NetworkModule {
         }
     }
 
+    // Uworzenie obiektu OKHttpCLient (potrzebny dla retrofita)
+    // + dodanie powyższego interceptora
     @Singleton
     @Provides
     fun provideOkHttpClient(
@@ -33,7 +36,10 @@ class NetworkModule {
         .addInterceptor(okHttpLoggingInterceptor)
         .build()
 
-
+    // Utworzenie obiektu retrofit wraz z:
+    //  BASE_URL - url do rest API
+    // Converter.Factory
+    // OkHttpClient
     @Singleton
     @Provides
     fun provideRetrofit(
@@ -46,6 +52,7 @@ class NetworkModule {
         .build()
 
     private companion object {
+        // stała zmienna która ma link do rest api
         const val BASE_URL = "https://rickandmortyapi.com/api/"
     }
 }

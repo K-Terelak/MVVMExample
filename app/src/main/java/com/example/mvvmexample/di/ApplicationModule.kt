@@ -14,12 +14,14 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object ApplicationModule {
 
+    // Utworzenie obiektu moshi do serializacji danych
     @Singleton
     @Provides
     fun provideMoshi(): Moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
         .build()
 
+    // A tutaj utworzenie Converter.Factory (potrzebny do retrofita)
     @Provides
     @Singleton
     fun provideMoshiConverterFactory(
