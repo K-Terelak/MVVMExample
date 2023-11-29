@@ -8,6 +8,7 @@ import com.example.mvvmexample.domain.model.DomainCharacter
 import com.example.mvvmexample.domain.repository.CharactersRepository
 import javax.inject.Inject
 
+// IMplementacja repozytorum (zawiera logike)
 class CharactersRepositoryImpl @Inject constructor(
     private val remoteCharactersDataSource: RemoteCharactersDataSource,
     private val domainCharacterMapper: DomainCharacterMapper
